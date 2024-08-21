@@ -11,6 +11,13 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Abstract
         List<EmployeeDto> GetEmployeeList();
 
         /// <summary>
+        /// Retrieves employee data with the specified id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        EmployeeDto GetEmployee(int id);
+
+        /// <summary>
         /// Adds or updates employee
         /// </summary>
         /// <param name="employeeData"></param>

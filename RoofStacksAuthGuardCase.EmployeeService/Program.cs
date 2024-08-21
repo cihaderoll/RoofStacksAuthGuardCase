@@ -3,8 +3,11 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using RoofStacksAuthGuardCase.EmployeeService.Context;
+using RoofStacksAuthGuardCase.EmployeeService.Extensions;
+using RoofStacksAuthGuardCase.EmployeeService.Handlers;
 using RoofStacksAuthGuardCase.EmployeeService.Services.Abstract;
 using RoofStacksAuthGuardCase.EmployeeService.Services.Concrete;
+using Serilog;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text.Json.Serialization;
 
@@ -45,7 +48,7 @@ builder.Services
                .AddAuthentication("Bearer")
                .AddJwtBearer("Bearer", config =>
                {
-                   config.Authority = "https://localhost:7178/";
+                   config.Authority = builder.Configuration.GetValue<string>("Authorization:Authority");
 
                    config.TokenValidationParameters = new TokenValidationParameters
                    {
@@ -54,11 +57,16 @@ builder.Services
                });
 
 // Add services to the container.
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 builder.Services.AddDbContext<AppDbContext>(
                     o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
                     .UseSnakeCaseNamingConvention());
+
+ConfigureExtensions.ConfigureLogging();
+builder.Host.UseSerilog();
 
 builder.Services.AddControllers().AddJsonOptions(opts => opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -69,6 +77,7 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
+app.UseExceptionHandler(opts => { });
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -77,6 +86,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseSerilogRequestLogging();
 
 app.UseAuthentication();
 app.UseAuthorization();

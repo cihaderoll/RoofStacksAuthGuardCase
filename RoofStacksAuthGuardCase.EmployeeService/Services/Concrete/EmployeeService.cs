@@ -27,6 +27,21 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
             return employeeData;
         }
 
+        public EmployeeDto GetEmployee(int id)
+        {
+            var employeeData = _appDbContext.Employees
+                .AsNoTracking()
+                .Where(o => o.Id == id)
+                .Select(o => new EmployeeDto
+            {
+                Id = o.Id,
+                FirstName = o.FirstName,
+                LastName = o.LastName,
+                Gender = o.Gender
+            }).FirstOrDefault();
+
+            return employeeData;
+        }
         
         public bool AddOrUpdateEmployee(EmployeeDto employeeData)
         {
@@ -70,6 +85,11 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
                 return false;
 
             return true;
+        }
+
+        public bool DeleteEmployee(int employeeId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

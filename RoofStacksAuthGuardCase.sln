@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoofStacksAuthGuardCase.Aut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmployeeAPI", "EmployeeAPI", "{4DE6C9FA-9857-403B-8C2E-931646C7E2F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoofStacksAuthGuardCase.EmployeeAPITest", "RoofStacksAuthGuardCase.EmployeeAPITest\RoofStacksAuthGuardCase.EmployeeAPITest.csproj", "{FDB45A9A-DE9B-4735-AA64-B94770257DFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB45A9A-DE9B-4735-AA64-B94770257DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB45A9A-DE9B-4735-AA64-B94770257DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB45A9A-DE9B-4735-AA64-B94770257DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB45A9A-DE9B-4735-AA64-B94770257DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 		{33DB03C6-B782-42BA-8599-23A4B8605FB1} = {65BF089A-C663-442F-A28E-D3474C9A72E1}
 		{535074C2-790D-446E-BFD1-FF2EBFF04CED} = {65BF089A-C663-442F-A28E-D3474C9A72E1}
 		{4DE6C9FA-9857-403B-8C2E-931646C7E2F4} = {65BF089A-C663-442F-A28E-D3474C9A72E1}
+		{FDB45A9A-DE9B-4735-AA64-B94770257DFE} = {37045A54-9479-4179-8E15-4EE75188899A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F29AC0AD-D59B-45C9-94B6-37B2C5E0D596}

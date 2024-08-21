@@ -1,7 +1,5 @@
 using Microsoft.Extensions.Configuration;
 using RoofStacksAuthGuardCase.AuthGuard.Common;
-using RoofStacksAuthGuardCase.AuthGuard.Services.Abstract;
-using RoofStacksAuthGuardCase.AuthGuard.Services.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,10 +14,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
-
-// Add services to the container.
-builder.Services.AddScoped<IAuthorizationInformationService, AuthorizationInformationService>();
-builder.Services.AddScoped<IAuthorizationService, AuthorizationService>();
 
 var app = builder.Build();
 
