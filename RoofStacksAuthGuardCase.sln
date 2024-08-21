@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{37045A54-9479-4179-8E15-4EE75188899A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{65BF089A-C663-442F-A28E-D3474C9A72E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoofStacksAuthGuardCase.EmployeeService", "RoofStacksAuthGuardCase.EmployeeService\RoofStacksAuthGuardCase.EmployeeService.csproj", "{33DB03C6-B782-42BA-8599-23A4B8605FB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoofStacksAuthGuardCase.AuthGuard", "RoofStacksAuthGuardCase.AuthGuard\RoofStacksAuthGuardCase.AuthGuard.csproj", "{535074C2-790D-446E-BFD1-FF2EBFF04CED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmployeeAPI", "EmployeeAPI", "{4DE6C9FA-9857-403B-8C2E-931646C7E2F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33DB03C6-B782-42BA-8599-23A4B8605FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DB03C6-B782-42BA-8599-23A4B8605FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DB03C6-B782-42BA-8599-23A4B8605FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DB03C6-B782-42BA-8599-23A4B8605FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535074C2-790D-446E-BFD1-FF2EBFF04CED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{33DB03C6-B782-42BA-8599-23A4B8605FB1} = {65BF089A-C663-442F-A28E-D3474C9A72E1}
+		{535074C2-790D-446E-BFD1-FF2EBFF04CED} = {65BF089A-C663-442F-A28E-D3474C9A72E1}
+		{4DE6C9FA-9857-403B-8C2E-931646C7E2F4} = {65BF089A-C663-442F-A28E-D3474C9A72E1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F29AC0AD-D59B-45C9-94B6-37B2C5E0D596}
+	EndGlobalSection
+EndGlobal
