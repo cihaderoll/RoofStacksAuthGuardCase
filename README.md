@@ -60,3 +60,23 @@ Within the application configuration files, the client's credential information 
 * Save and run both applications again.
 
 ## Consuming API
+
+To consume the EmployeeService endpoints, you need the access_token mentioned above. After obtaining the access_token, you must include this token in the Authorization header of all subsequent requests.
+Below is an example of how to include the relevant token in the header of a request sent via curl:
+
+```
+curl --location 'https://localhost:7126/api/v1/employee' \
+--header 'Authorization: Bearer eyJhbGc...'
+```
+
+After doing this, you can successfully make requests to the endpoints within the EmployeeService application. Below are the endpoints available for requests within the application:
+
+```
+GET https://localhost:7126/api/v1/employee
+GET https://localhost:7126/api/v1/employee/{id}
+POST https://localhost:7126/api/v1/employee
+PUT https://localhost:7126/api/v1/employee
+DELETE https://localhost:7126/api/v1/employee
+```
+
+
