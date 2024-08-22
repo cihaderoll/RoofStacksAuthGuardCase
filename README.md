@@ -1,5 +1,11 @@
 # **RoofStacks Auth-Guard Case**
 
+## **Table Of Contents**
+* [Summary](#Summary)
+* [Prerequisites](#Prerequisites)
+* [Installation](#Installation)
+* [Getting Access Token](#getting-access-token)
+
 ## **Summary**
 The project is built on the .NET 8 architecture and consists of an authorization server that complies with OAuth/OpenID standards, as well as a Web API that performs CRUD operations on the employee list.
 
@@ -26,11 +32,7 @@ To install Auth-Guard, follow these steps:
 2. Verify the configurations within the application (such as server ports) and check the configurations of the servers you have set up.
 3. Run command **`update-database -context appdbcontext`**
 
-## **Table Of Contents**
-* [Summary](#Summary)
-* [Project Structure](#project-structure)
-* [Installation](#Installation)
-* [Getting Access Token](#getting-access-token)
+
 
 
 ## Getting Access Token
@@ -41,5 +43,3 @@ esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo volu
 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
 quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque 
 earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-
-## project-structure
