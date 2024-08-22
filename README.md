@@ -17,7 +17,7 @@ The project is built on the .NET 8 architecture and consists of an authorization
 ## **Installation**
 To install Auth-Guard, follow these steps:
 
-1. Clone the repository: 
+1. Clone the repository: **`git clone https://github.com/username/project-title.git`**
 2. fwefwefwef
 
 ## **Table Of Contents**
