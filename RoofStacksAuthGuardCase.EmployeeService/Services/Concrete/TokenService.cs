@@ -19,12 +19,11 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
 
         public async Task<TokenRequestDto> GetAccessTokenAsync()
         {
-            throw new Exception("deneme");
-
             var serverClient = _httpClientFactory.CreateClient();
 
             var discoveryDoc = await serverClient.GetDiscoveryDocumentAsync(_config.GetValue<string>("Authorization:Authority"));
-
+            if(discoveryDoc.IsError)
+                throw new UnauthorizedAccessException(discoveryDoc.Error);
 
             var tokenResponse = await serverClient
                 .RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
@@ -34,6 +33,8 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
                     ClientSecret = _config.GetValue<string>("Authorization:ClientSecret"),
                     Scope = _config.GetValue<string>("Authorization:Scope")
                 });
+            if (tokenResponse.IsError)
+                throw new UnauthorizedAccessException(tokenResponse.Error);
 
             return new TokenRequestDto
             {

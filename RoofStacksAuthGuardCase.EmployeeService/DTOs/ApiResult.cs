@@ -5,16 +5,10 @@ namespace RoofStacksAuthGuardCase.EmployeeService.DTOs
     public class ApiResult
     {
         /// <summary>
-        /// Total Response Time
+        /// Total Errors
         /// </summary>
         [JsonProperty(PropertyName = "errors", Order = 6)]
         public string[] Errors { get; set; }
-
-        /// <summary>
-        /// Total Response Time
-        /// </summary>
-        [JsonProperty(PropertyName = "elapsedTime", Order = 5)]
-        public string? ElapsedTime { get; set; }
 
         /// <summary>
         /// Response Status Code
@@ -23,9 +17,9 @@ namespace RoofStacksAuthGuardCase.EmployeeService.DTOs
         public int StatusCode { get; set; } = 200;
 
         /// <summary>
-        /// Generated Result
+        /// IsError
         /// </summary>
-        [JsonProperty(PropertyName = "isErrorr", Order = 3)]
+        [JsonProperty(PropertyName = "isError", Order = 3)]
         public bool IsError { get; set; }
 
         /// <summary>

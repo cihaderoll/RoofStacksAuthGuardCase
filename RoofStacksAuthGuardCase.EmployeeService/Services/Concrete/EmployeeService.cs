@@ -14,22 +14,22 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
             _appDbContext = appDbContext;
         }
 
-        public List<EmployeeDto> GetEmployeeList()
+        public async Task<List<EmployeeDto>> GetEmployeeListAsync()
         {
-            var employeeData = _appDbContext.Employees.AsNoTracking().Select(o => new EmployeeDto
+            var employeeData = await _appDbContext.Employees.AsNoTracking().Select(o => new EmployeeDto
             {
                 Id = o.Id,
                 FirstName = o.FirstName,
                 LastName = o.LastName,
                 Gender = o.Gender
-            }).ToList();
+            }).ToListAsync();
 
             return employeeData;
         }
 
-        public EmployeeDto GetEmployee(int id)
+        public async Task<EmployeeDto> GetEmployeeAsync(int id)
         {
-            var employeeData = _appDbContext.Employees
+            var employeeData = await _appDbContext.Employees
                 .AsNoTracking()
                 .Where(o => o.Id == id)
                 .Select(o => new EmployeeDto
@@ -38,35 +38,35 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
                 FirstName = o.FirstName,
                 LastName = o.LastName,
                 Gender = o.Gender
-            }).FirstOrDefault();
+            }).FirstOrDefaultAsync();
 
-            return employeeData;
+            return employeeData ?? throw new Exception("Kayıt Bulunamadı.");
         }
-        
-        public bool AddOrUpdateEmployee(EmployeeDto employeeData)
+
+        public async Task<bool> AddOrUpdateEmployeeAsync(EmployeeDto employeeData)
         {
             //validations take place here for simplicity
             if (!ValidateEmployeeData(employeeData))
                 return false;
                 
-            return employeeData.Id > 0 ? UpdateEmployee(employeeData) : AddEmployee(employeeData);
+            return employeeData.Id > 0 ? await UpdateEmployeeAsync(employeeData) : await AddEmployeeAsync(employeeData);
         }
 
-        private bool AddEmployee(EmployeeDto employeeData)
+        private async Task<bool> AddEmployeeAsync(EmployeeDto employeeData)
         {
-            _appDbContext.Employees.Add(new Model.Employee
+            await _appDbContext.Employees.AddAsync(new Model.Employee
             {
                 FirstName = employeeData.FirstName,
                 LastName = employeeData.LastName,
                 Gender = employeeData.Gender,
             });
 
-            return _appDbContext.SaveChanges() > 0;
+            return (await _appDbContext.SaveChangesAsync()) > 0;
         }
 
-        private bool UpdateEmployee(EmployeeDto employeeData)
+        private async Task<bool> UpdateEmployeeAsync(EmployeeDto employeeData)
         {
-            var employee = _appDbContext.Employees.FirstOrDefault(o => o.Id == employeeData.Id);
+            var employee = await _appDbContext.Employees.FirstOrDefaultAsync(o => o.Id == employeeData.Id);
             if (employee == null)
                 return false;
 
@@ -74,22 +74,29 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Concrete
             employee.LastName = employeeData.LastName;
             employee.Gender = employeeData.Gender;
 
-            return _appDbContext.SaveChanges() > 0;
+            return (await _appDbContext.SaveChangesAsync()) > 0;
         }
 
         private bool ValidateEmployeeData(EmployeeDto employeeData)
         {
             if(string.IsNullOrEmpty(employeeData.FirstName) || 
-                string.IsNullOrEmpty(employeeData.LastName) ||
-                employeeData.BirthYear <= 0)
+                string.IsNullOrEmpty(employeeData.LastName))
                 return false;
 
             return true;
         }
 
-        public bool DeleteEmployee(int employeeId)
+        public async Task<bool> DeleteEmployeeAsync(int employeeId)
         {
-            throw new NotImplementedException();
+            var employeeData = await _appDbContext.Employees.FirstOrDefaultAsync(o => o.Id == employeeId);
+            if (employeeData == null)
+                throw new Exception("Kayıt bulunamadı");
+
+            _appDbContext.Employees.Remove(employeeData);
+            if((await _appDbContext.SaveChangesAsync()) <= 0)
+                throw new Exception("İşlem esnasında bir sorun oluştu");
+
+            return true;
         }
     }
 }

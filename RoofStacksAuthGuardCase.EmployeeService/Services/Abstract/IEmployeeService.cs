@@ -8,14 +8,14 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Abstract
         /// Gets employee list
         /// </summary>
         /// <returns></returns>
-        List<EmployeeDto> GetEmployeeList();
+        Task<List<EmployeeDto>> GetEmployeeListAsync();
 
         /// <summary>
         /// Retrieves employee data with the specified id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        EmployeeDto GetEmployee(int id);
+        Task<EmployeeDto> GetEmployeeAsync(int id);
 
         /// <summary>
         /// Adds or updates employee
@@ -23,7 +23,7 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Abstract
         /// <param name="employeeData"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        bool AddOrUpdateEmployee(EmployeeDto employeeData);
+        Task<bool> AddOrUpdateEmployeeAsync(EmployeeDto employeeData);
 
         /// <summary>
         /// Finds and deletes the employee
@@ -31,6 +31,6 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Services.Abstract
         /// </summary>
         /// <param name="employeeId"></param>
         /// <returns></returns>
-        bool DeleteEmployee(int employeeId);
+        Task<bool> DeleteEmployeeAsync(int employeeId);
     }
 }

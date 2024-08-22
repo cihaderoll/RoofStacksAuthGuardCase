@@ -17,27 +17,33 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Controllers.v1
         }
 
         [HttpGet]
-        public JsonResult GetEmployeeList()
+        public async Task<OkObjectResult> GetEmployeeListAsync()
         {
-            return new JsonResult(_employeeService.GetEmployeeList());
+            return Ok(await _employeeService.GetEmployeeListAsync());
         }
 
         [HttpGet("{id}")]
-        public JsonResult GetEmployeeList(int id)
+        public async Task<OkObjectResult> GetEmployeeAsync(int id)
         {
-            return new JsonResult(_employeeService.GetEmployee(id));
+            return Ok(await _employeeService.GetEmployeeAsync(id));
         }
 
         [HttpPost]
-        public JsonResult CreateEmployee(EmployeeDto employeeData)
+        public async Task<OkObjectResult> CreateEmployeeAsync(EmployeeDto employeeData)
         {
-            return new JsonResult(_employeeService.AddOrUpdateEmployee(employeeData));
+            return Ok(await _employeeService.AddOrUpdateEmployeeAsync(employeeData));
         }
 
         [HttpPut]
-        public JsonResult UpdateEmployee(EmployeeDto employeeData)
+        public async Task<OkObjectResult> UpdateEmployeeAsync(EmployeeDto employeeData)
         {
-            return new JsonResult(_employeeService.AddOrUpdateEmployee(employeeData));
+            return Ok(await _employeeService.AddOrUpdateEmployeeAsync(employeeData));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<OkObjectResult> DeleteEmployeeAsync(int id)
+        {
+            return Ok(await _employeeService.DeleteEmployeeAsync(id));
         }
     }
 }

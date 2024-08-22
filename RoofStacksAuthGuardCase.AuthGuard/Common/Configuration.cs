@@ -17,7 +17,7 @@ namespace RoofStacksAuthGuardCase.AuthGuard.Common
                 new Client
                 {
                     ClientId = "EmployeeAPI",
-                    ClientSecrets = { new Secret("EmployeeAPI_Secret".ToSha256()) },
+                    ClientSecrets = { new Secret("57cd3314-b25e-4c24-a88d-869feb2822b0".ToSha256()) },
 
                     // No interactive user, uses the ClientId & Secret for authentication.
                     AllowedGrantTypes = GrantTypes.ClientCredentials,

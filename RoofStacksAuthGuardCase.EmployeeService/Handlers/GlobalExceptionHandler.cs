@@ -14,6 +14,15 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Handlers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Uygulama içerisindeki bütün hata durumları bu handler
+        /// üzerinden handle edilir. İlgili tüm alanlara (Elastic, console ve debug console)
+        /// log atıldıktan sonra hata mesajını içeren ApiResult return edilir.
+        /// </summary>
+        /// <param name="httpContext"></param>
+        /// <param name="exception"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
             //logging

@@ -9,6 +9,14 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Filters
 {
     public class ApiResultFilterAttribute : IAsyncActionFilter
     {
+        /// <summary>
+        /// Uygulama içerisindeki bütün response'lar bu filter üzerinden 
+        /// (eğer ApiResult tipinde değilse) ApiResult tipine dömüştürülüp
+        /// return edilir.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="next"></param>
+        /// <returns></returns>
         public async Task OnActionExecutionAsync(ActionExecutingContext context,
                                          ActionExecutionDelegate next)
         {
