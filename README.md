@@ -14,11 +14,15 @@ The project is built on the .NET 8 architecture and consists of an authorization
 * xUnit
 * Moq
 
+## **Prerequisites**
+* .NET 8 SDK
+* PostgreSQL ([How to install](https://www.dbvis.com/thetable/how-to-set-up-postgres-using-docker/))
+
 ## **Installation**
 To install Auth-Guard, follow these steps:
 
-1. Clone the repository: **`git clone https://github.com/username/project-title.git`**
-2. fwefwefwef
+1. Clone the repository: **`git clone https://github.com/cihaderoll/RoofStacksAuthGuardCase.git`**
+2. Install PostgreSQL 
 
 ## **Table Of Contents**
 * [Summary](#Summary)
