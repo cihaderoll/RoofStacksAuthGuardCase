@@ -22,9 +22,9 @@ To install Auth-Guard, follow these steps:
 
 ## **Table Of Contents**
 * [Summary](#Summary)
-* [Project Structure](#Project Structure)
+* [Project Structure](#ProjectStructure)
 * [Installation](#Installation)
-* [Getting Access Token](#Getting Access Token)
+* [Getting Access Token](#GettingAccessToken)
 
 
 ## Getting Access Token
