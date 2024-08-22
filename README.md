@@ -3,7 +3,7 @@
 ## **Table Of Contents**
 * [Summary](#Summary)
 * [Technologies Used](#technologies-used)
-* [How Authorization Flow Works](#how-authorization-flow-works)
+* [How Authorization (Credential Flow) Works](#how-authorization-(Credential-Flow)-works)
 * [Prerequisites](#Prerequisites)
 * [Installation](#Installation)
 * [Getting Access Token](#getting-access-token)
@@ -23,7 +23,7 @@ The project is built on the .NET 8 architecture and consists of an authorization
 * xUnit
 * Moq
 
-## **How Authorization Flow Works**
+## **How Authorization (Credential Flow) Works**
 
 ![image](https://github.com/user-attachments/assets/8b08ceeb-01a2-4c9a-b62a-b0aef4ca6d29)
 
