@@ -2,6 +2,8 @@
 
 ## **Table Of Contents**
 * [Summary](#Summary)
+* [Technologies Used](#technologies-used)
+* [How Authorization Flow Works](#how-authorization-flow-works)
 * [Prerequisites](#Prerequisites)
 * [Installation](#Installation)
 * [Getting Access Token](#getting-access-token)
@@ -20,6 +22,17 @@ The project is built on the .NET 8 architecture and consists of an authorization
 * JWT
 * xUnit
 * Moq
+
+## **How Authorization Flow Works**
+
+![image](https://github.com/user-attachments/assets/8b08ceeb-01a2-4c9a-b62a-b0aef4ca6d29)
+
+1. The client application (in our scenario, Postman) sends a request to the **`https://localhost:7126/oauth/token`** endpoint with the necessary credential information.
+2. **`After the Auth0 Authorization Server`** validates the credentials, it returns a response containing the accessToken to the client application.
+3. Then, the client application sends a request to the **`EmployeeAPI`** with the access token received from the authentication server.
+4. After the **`EmployeeAPI`** validates the token, it returns the appropriate response.
+
+
 
 ## **Prerequisites**
 * .NET 8 SDK
