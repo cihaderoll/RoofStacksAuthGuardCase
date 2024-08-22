@@ -3,7 +3,7 @@
 ## **Table Of Contents**
 * [Summary](#Summary)
 * [Technologies Used](#technologies-used)
-* [How Authorization (Credential Flow) Works](#how-authorization-(Credential-Flow)-works)
+* [How Authorization (Credential Flow) Works](#how-authorization-credential-flow-works)
 * [Prerequisites](#Prerequisites)
 * [Installation](#Installation)
 * [Getting Access Token](#getting-access-token)
