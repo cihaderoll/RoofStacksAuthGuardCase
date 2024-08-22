@@ -45,6 +45,11 @@ namespace RoofStacksAuthGuardCase.EmployeeService.Handlers
                     apiResult.StatusCode = (int)HttpStatusCode.Unauthorized;
                     apiResult.Message = exception.Message;
                     break;
+                case Exception:
+                    httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    apiResult.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    apiResult.Message = exception.Message;
+                    break;
                 default:
                     httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     apiResult.StatusCode = (int)HttpStatusCode.InternalServerError;

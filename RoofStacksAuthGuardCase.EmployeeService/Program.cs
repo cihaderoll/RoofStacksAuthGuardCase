@@ -13,37 +13,6 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-#region authorizing by own created identity server 
-
-//JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
-//builder.Services.AddAuthentication(config =>
-//{
-//    config.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//    config.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
-//}).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme)
-//     .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
-//     {
-//         // this is my Authorization Server Port
-//         options.Authority = "https://localhost:7178"; //TODO port düzenle
-//         options.ClientId = "EmployeeWebAPI";
-//         options.ClientSecret = "3df7f9e3-e426-4674-8954-eff2ba000a6b";
-//         options.ResponseType = "code";
-//         options.CallbackPath = "/signin-oidc";
-//         options.SaveTokens = true;
-//         options.TokenValidationParameters = new TokenValidationParameters
-//         {
-//             ValidateIssuerSigningKey = false,
-//             SignatureValidator = delegate (string token, TokenValidationParameters validationParameters)
-//             {
-//                 var jwt = new JwtSecurityToken(token);
-//                 return jwt;
-//             },
-//         };
-//     });
-
-#endregion authorizing by own created identity server 
-
 builder.Services
                .AddAuthentication("Bearer")
                .AddJwtBearer("Bearer", config =>
